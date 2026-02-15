@@ -4,6 +4,13 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Coludai Docs",
   description: "Coludai 官方文档",
+  head: [
+    [
+      'script',
+      {},
+      "(function () { if (typeof window === 'undefined') return; var path = window.location.pathname || '/'; var isHomePage = path === '/' || path === '/index.html'; var isTeamPage = path === '/index/team' || path === '/index/team/' || path === '/index/team.html'; if (!isHomePage && !isTeamPage) { window.location.replace('https://api-docs.coludai.cn'); } })();"
+    ]
+  ],
   ignoreDeadLinks: true,
   lastUpdated: true,
   rewrites: {
